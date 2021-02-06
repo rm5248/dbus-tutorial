@@ -2,3 +2,4 @@ build/
 /dbus_java_notify/target/
 /dbus_java_receive/target/
 /dbus_java_recv_sig/target/
+/dbus_java_send_sig/target/

@@ -14,6 +14,7 @@
         <module>dbus_java_receive</module>
         <module>dbus_java_send</module>
         <module>dbus_java_recv_sig</module>
+        <module>dbus_java_send_sig</module>
     </modules>
 
 </project>
