@@ -3,19 +3,15 @@
 #include <string.h>
 #include <unistd.h>
 
-using namespace std;
-
 int main(int argc, char** argv){
 
-	//First we have to init the dbus.
-	DBus::init();
 	//The dispatcher sends us information.  Make sure that it doesn't go out of scope or bad things will happen.
-	DBus::Dispatcher::pointer dispatcher = DBus::Dispatcher::create();
+	std::shared_ptr<DBus::Dispatcher> dispatcher = DBus::StandaloneDispatcher::create();
 	//Create a connection to the session bus
-	DBus::Connection::pointer connection = dispatcher->create_connection( DBus::BUS_SESSION );
+	std::shared_ptr<DBus::Connection> connection = dispatcher->create_connection( DBus::BusType::SESSION );
   	
-  	DBus::signal<void, int, string, int>::pointer signal_send = connection->
-        create_signal<void, int, string, int>("/", "com.rm5248.SignalInterface", "GenericSignal");
+  	std::shared_ptr<DBus::Signal<void(int,std::string,int)>> signal_send = connection->
+        create_free_signal<void(int,std::string,int)>("/", "com.rm5248.SignalInterface", "GenericSignal");
         
     signal_send->emit( 5, "Sending out signals is fun!", 17);
   	return 0;
