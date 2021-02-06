@@ -18,3 +18,4 @@ set(CXX_STANDARD_REQUIRED ON)
 #
 add_subdirectory(dbus_c++_receive)
 add_subdirectory(dbus_c++_send)
+add_subdirectory(dbus_c++_notify)
