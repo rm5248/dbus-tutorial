@@ -1,0 +1,3 @@
+build/
+/dbus_java_notify/target/
+/dbus_java_receive/target/

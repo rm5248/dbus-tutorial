@@ -1,6 +1,6 @@
 package com.rm5248;
 
-import org.freedesktop.dbus.DBusInterface;
+import org.freedesktop.dbus.interfaces.DBusInterface;
 
 public interface ReceiveInterface extends DBusInterface {
 	
